@@ -9,9 +9,17 @@ const App = () => {
   return (
     <View style={ {
       flex:1,
-      backgroundColor: 'red'
+      // backgroundColor: 'red',
+      justifyContent: 'center'
     } }>
-      <Text>Hola mundo </Text>
+      <Text
+      style={{
+        fontSize: 45,
+        textAlign: 'center'
+      }}
+      > Hola mundo</Text>
+   
+
     </View>
   )
 }
