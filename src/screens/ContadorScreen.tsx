@@ -14,6 +14,7 @@ export const ContadorScreen = () => {
 
             <Fab 
                 title="+1"
+                onPress={() => setContador( contador + 1)}
             />
 
             {/* <TouchableOpacity
