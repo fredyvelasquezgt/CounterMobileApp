@@ -1,44 +1,62 @@
 import React from 'react'
-import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, View, StyleSheet, TouchableNativeFeedback } from 'react-native';
 
 
 interface Props {
     title: String,
+    position?: 'br' | 'bl';
     onPress: () => void;
+    
 }
 
-export const Fab = ({title, onPress}: Props) => {
+export const Fab = ({title, onPress, position = 'br'}: Props) => {
 
     
     return (
-        <TouchableOpacity
-                style={styles.fabLocationBR}
-                onPress={onPress}
+        <View style={[
+            styles.fabLocation,
+            (position === 'bl') ? styles.left : styles.right
+         ]}   >
+<TouchableNativeFeedback
+            background={TouchableNativeFeedback.Ripple('black',false, 30)}
+            onPress={onPress}
             >
                 <View style={styles.fab}>
                     <Text style={styles.fabText}> {title}</Text>
                 </View>
-            </TouchableOpacity>
+            </TouchableNativeFeedback>
+        </View>
+        
     )
 }
 
 const styles = StyleSheet.create({
-    fabLocationBR: {
+    fabLocation: {
         position: 'absolute',
         bottom: 25,
-        right: 25
+        borderRadius: 100
     },
-    fabLocationBL: {
-        position: 'absolute',
-        bottom: 25,
-        left: 25
-    },
+right: {
+    right: 25
+},
+left: {
+    left: 25
+},
     fab: {
         backgroundColor: '#5856D6',
         width: 60,
         height: 60,
         borderRadius: 100,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        shadowColor: "#000",
+shadowOffset: {
+	width: 0,
+	height: 8,
+},
+shadowOpacity: 0.46,
+shadowRadius: 11.14,
+
+elevation: 17,
     } ,
     fabText: {
         color: 'white',
