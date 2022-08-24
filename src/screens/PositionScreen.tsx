@@ -6,6 +6,7 @@ export const PositionScreen = () => {
         <View style={styles.container}>
             <View style={styles.cajaMorada}/>
             <View style={styles.cajaNaranja}/>
+            <View style={styles.cajaVerde}/>
 
         </View>
     )
@@ -39,5 +40,15 @@ const styles = StyleSheet.create({
         borderColor: 'white',
         top: 300,
         left: 290
+    },
+    cajaVerde: {
+        width: 100,
+        height: 100,
+        backgroundColor: 'green',
+        borderWidth: 10,
+        borderColor: 'white',
+        bottom: 0,
+        left: 0,
+        position: 'absolute'
     }
 });
