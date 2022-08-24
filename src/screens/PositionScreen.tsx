@@ -13,10 +13,11 @@ export const PositionScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        //flex: 1,
-        width: 300,
-        justifyContent: 'center',
-        alignItems: 'center',
+        // flex: 1,
+        width: 400,
+        height: 400,
+        // justifyContent: 'center',
+        // alignItems: 'center',
         backgroundColor: '#28C4D9'
     },
     cajaMorada: {
@@ -25,6 +26,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#5856D6',
         borderWidth: 10,
         borderColor: 'white',
+        position: 'absolute',
+        bottom: 300,
+        right: 10
        
     },
     cajaNaranja: {
@@ -33,6 +37,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F0A23B',
         borderWidth: 10,
         borderColor: 'white',
-        top: -50
+        top: 300,
+        left: 290
     }
 });
